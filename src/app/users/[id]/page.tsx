@@ -16,11 +16,14 @@ type User = {
   };
 }
 
+type Props = {
+  params: { id: string }
+};
 
-export default async function user({ params }: { params: { id: string } }) {
+export default async function user({ params }: Props) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
   const user: User = await response.json()
-  console.log(user)
+  
   return (
     <>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-blue-50 to-purple-100 p-8">
