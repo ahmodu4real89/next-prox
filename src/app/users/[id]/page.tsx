@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 type User = {
-  id: number;
+  id: string;
   name: string;
   username: string;
   email: string;
@@ -17,7 +17,7 @@ type User = {
 }
 
 
-export default async function user({ params }: { params: { id: number } }) {
+export default async function user({ params }: { params: { id: string } }) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
   const user: User = await response.json()
   console.log(user)
