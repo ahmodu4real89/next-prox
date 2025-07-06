@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 type User = {
-    id: number,
+    id: string,
     name: string,
     username: string,
     email: string
