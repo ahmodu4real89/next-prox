@@ -1,4 +1,3 @@
-import { resolve } from "path"
 
 type Author = {
   id:number,

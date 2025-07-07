@@ -1,7 +1,5 @@
 "use client"
 import Link from "next/link";
-import Form from "next/form"
-import { getProducts } from "../prisma-db";
 import { removeProduct } from "@/actions/products";
 import { useOptimistic } from "react";
 
@@ -54,10 +52,7 @@ export const ProductDetails = ({products}:{products:Product[]}) => {
                                 <p className="text-gray-600 mb-4">{product.description}</p>
                                 <p className="text-xl font-bold text-green-600">${product.price}</p>
                             </Link>
-                            {/* <Form action={removeProductById.bind(null, product.id)}>
-                                  <button type="submit" className="px-4 mt-4 text-white bg-red-500 rounded-md hover:bg-red-300">Delete</button>
-                            </Form> */}
-                          
+                        
                         </li>
                     ))}
                 </ul>

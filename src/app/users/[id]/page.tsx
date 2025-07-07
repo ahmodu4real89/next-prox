@@ -16,7 +16,7 @@ type User = {
   };
 }
 
-export default async function user({ params }: { params: { id: string } }) {
+export default async function user({ params }: { params: Promise <{ id: string }> }) {
   const { id } = await params
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
   const user: User = await response.json()

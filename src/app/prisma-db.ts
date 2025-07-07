@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import { PrismaClient } from "@/generated/prisma";
 const prisma = new PrismaClient()
 
