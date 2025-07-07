@@ -7,13 +7,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:app.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Product {
-  id Int @id @default(autoincrement())
-  title String
-  price Int
+  id          Int     @id @default(autoincrement())
+  title       String
+  price       Int
   description String?
 }
