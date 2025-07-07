@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 type User = {
-  id: string;
+  id: number;
   name: string;
   username: string;
   email: string;
@@ -16,14 +16,11 @@ type User = {
   };
 }
 
-type Props = {
-  params: { id: string }
-};
-
-export default async function user({ params }: Props) {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
+export default async function user({ params }: { params: { id: string } }) {
+  const { id } = await params
+  const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
   const user: User = await response.json()
-  
+
   return (
     <>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-blue-50 to-purple-100 p-8">
